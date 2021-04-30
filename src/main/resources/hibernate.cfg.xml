@@ -19,5 +19,7 @@
 
         <mapping class="main.hiber.model.CarModel" />
         <mapping class="main.hiber.model.CarBrand" />
+        <mapping class="main.hiber.model.Author" />
+        <mapping class="main.hiber.model.Book" />
     </session-factory>
 </hibernate-configuration>
