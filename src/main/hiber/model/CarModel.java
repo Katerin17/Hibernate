@@ -12,9 +12,14 @@ public class CarModel {
 
     private String name;
 
-    public static CarModel of(String name) {
+    @ManyToOne
+    @JoinColumn(name = "carbrand_id")
+    private CarBrand carBrand;
+
+    public static CarModel of(String name, CarBrand brand) {
         CarModel carModel = new CarModel();
         carModel.name = name;
+        carModel.carBrand = brand;
         return carModel;
     }
 
@@ -34,6 +39,14 @@ public class CarModel {
         this.name = name;
     }
 
+    public CarBrand getCarBrand() {
+        return carBrand;
+    }
+
+    public void setCarBrand(CarBrand carBrand) {
+        this.carBrand = carBrand;
+    }
+
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
@@ -45,5 +58,14 @@ public class CarModel {
     @Override
     public int hashCode() {
         return Objects.hash(id);
+    }
+
+    @Override
+    public String toString() {
+        return "CarModel{" +
+                "id=" + id +
+                ", name='" + name + '\'' +
+                ", carBrand=" + carBrand +
+                '}';
     }
 }
