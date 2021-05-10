@@ -21,5 +21,8 @@
         <mapping class="main.hiber.model.CarBrand" />
         <mapping class="main.hiber.model.Author" />
         <mapping class="main.hiber.model.Book" />
+        <mapping class="main.hiber.model.Car" />
+        <mapping class="main.hiber.model.Engine" />
+        <mapping class="main.hiber.model.Driver" />
     </session-factory>
 </hibernate-configuration>
